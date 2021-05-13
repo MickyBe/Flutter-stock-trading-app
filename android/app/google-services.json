@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "299181714499",
+    "project_id": "trade-ethiopia",
+    "storage_bucket": "trade-ethiopia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299181714499:android:c6356b4851f7ecea5338f6",
+        "android_client_info": {
+          "package_name": "com.example.flutter_tech_camp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299181714499-r2319pbajk3l3j1ec49l4ufbs0c8jj6l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIdVkej1jW00SDMy8ZnjwuhohWYjby3bU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299181714499-r2319pbajk3l3j1ec49l4ufbs0c8jj6l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 
 import '../cart/screens/cart_page.dart';
 import '../product_detail/screen/product_detail_page.dart';
-import '../products/models/product.dart';
 import '../products/screens/products_page.dart';
 import '../profile/screens/profile_page.dart';
 
@@ -80,6 +79,6 @@ class AppRouter extends RouterBase {
 /// ProductDetailPage arguments holder class
 class ProductDetailPageArguments {
   final Key key;
-  final Product product;
+  final dynamic product;
   ProductDetailPageArguments({this.key, this.product});
 }

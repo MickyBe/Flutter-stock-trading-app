@@ -14,7 +14,7 @@ class ProfilePage extends StatelessWidget {
     Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.black,
         title: Text(
           'Profile',
           style: TextStyle(
@@ -33,6 +33,7 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       body: RefreshIndicator(
+          color: Colors.grey,
           onRefresh: () => null,
           child: BlocBuilder<ProfileCubit, ProfileState>(
             builder: (context, state) {
@@ -61,38 +62,41 @@ class _Profile extends StatelessWidget {
   const _Profile({Key key, this.profile}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(height: 20),
-          //Profileimage
-          Container(
-            alignment: Alignment.center,
-            child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  'https://www.kindpng.com/picc/m/173-1731325_person-icon-png-transparent-png.png',
-                ),
-                minRadius: 50,
-                maxRadius: 75),
-          ),
-          SizedBox(height: 5),
-          //User FullName
-          _buildString('${profile.name.firstname} ${profile.name.lastname}', 25, true, TextAlign.center),
-          //Username
-          _buildString(profile.username, 15, false, TextAlign.center),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 15.5,
-          ),
-          _displayInfon('First Name', '${profile.name.firstname}', context),
-          _buildLineDivider(),
-          _displayInfon('Last Name', '${profile.name.lastname}', context),
-          _buildLineDivider(),
-          _displayInfon('My Email', '${profile.email}', context),
-          _buildLineDivider(),
-          _displayInfon('My Address', '${profile.address.zipcode},${profile.address.street},${profile.address.city}', context),
-          _buildLineDivider(),
-          _displayInfon('My Phone', '${profile.phone}', context),
-        ]);
+    return Container(
+      color: Colors.black45,
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: 20),
+            //Profileimage
+            Container(
+              alignment: Alignment.center,
+              child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                    'https://www.kindpng.com/picc/m/173-1731325_person-icon-png-transparent-png.png',
+                  ),
+                  minRadius: 50,
+                  maxRadius: 75),
+            ),
+            SizedBox(height: 5),
+            //User FullName
+            _buildString('${profile.name.firstname} ${profile.name.lastname}', 25, true, TextAlign.center),
+            //Username
+            _buildString(profile.username, 15, false, TextAlign.center),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 15.5,
+            ),
+            _displayInfon('First Name', '${profile.name.firstname}', context),
+            _buildLineDivider(),
+            _displayInfon('Last Name', '${profile.name.lastname}', context),
+            _buildLineDivider(),
+            _displayInfon('My Email', '${profile.email}', context),
+            _buildLineDivider(),
+            _displayInfon('My Address', '${profile.address.zipcode},${profile.address.street},${profile.address.city}', context),
+            _buildLineDivider(),
+            _displayInfon('My Phone', '${profile.phone}', context),
+          ]),
+    );
   }
 
   Divider _buildLineDivider() {

@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tech_camp/src/products/models/product.dart';
 
-class ProductDetailPage extends StatelessWidget {
-  final Product product;
+import 'home_page_sceen.dart';
+
+class ProductDetailPage extends StatefulWidget {
+  final product;
 
   const ProductDetailPage({Key key, this.product}) : super(key: key);
 
+  @override
+  _ProductDetailPageState createState() => _ProductDetailPageState();
+}
+
+class _ProductDetailPageState extends State<ProductDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +36,7 @@ class ProductDetailPage extends StatelessWidget {
           ),
         ),
       ),
-      body: _ProductDetailPage(product: product),
+      body: HomePageScreen(),//_ProductDetailPage(product: product),
       bottomNavigationBar: _BuildBottomNavigationBar(),
     );
   }
@@ -88,7 +95,7 @@ class _BuildBottomNavigationBar extends StatelessWidget {
 }
 
 class _ProductDetailPage extends StatelessWidget {
-  final Product product;
+  final product;
 
   const _ProductDetailPage({Key key, this.product}) : super(key: key);
   @override
@@ -141,7 +148,7 @@ class _ProductDetailPage extends StatelessWidget {
         child: Center(
           child:  Container(
               child: Image.network(
-                product.image,
+                product['country'],
                 fit: BoxFit.scaleDown,
               ),
           ),
@@ -156,7 +163,7 @@ class _ProductDetailPage extends StatelessWidget {
       child: Center(
         child: Text(
           //name,
-          product.title,
+          product['name'],
           style: TextStyle(fontSize: 16.0, color: Colors.black),
         ),
       ),
@@ -171,7 +178,7 @@ class _ProductDetailPage extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           Text(
-            "\$${product.price}",
+            "\$${product['symbol']}",
             style: TextStyle(fontSize: 16.0, color: Colors.black),
           ),
         ],
@@ -200,7 +207,7 @@ class _ProductDetailPage extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Text(
-                  product.description,
+                  product['name'],//detail
                   style: TextStyle(
                     color: Colors.black,
                   ),
